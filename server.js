@@ -9,6 +9,9 @@ const app = express();
 
 app.use(express.json())
 
+app.use(cors({
+    origin: '*'
+}));
 
 
 mongoose.connect(MONGO_URI,
