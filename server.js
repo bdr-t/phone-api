@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose")
 const {MONGO_URI} = require("./config")
+const cors = require("cors")
 const Posts = require("./models/posts")
 
 
