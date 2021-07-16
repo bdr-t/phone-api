@@ -42,6 +42,16 @@ app.post('/', async (req, res) =>{
     }
 })
 
+app.delete('/', async(req, res)=>{
+    try{
+        const post = await Posts.findByIdAndDelete(req.params.id)
+        if(!post) throw Error('No post found')
+        res.status(200).json({success : true})
+    } catch(err){
+        res.status(400).json({message : err})
+    }
+})
+
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
