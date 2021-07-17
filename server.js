@@ -46,7 +46,7 @@ app.post('/', async (req, res) =>{
     }
 })
 
-app.delete('/', async(req, res)=>{
+app.delete('/:id', async(req, res)=>{
     try{
         const post = await Posts.findByIdAndDelete(req.params.id)
         if(!post) throw Error('No post found')
